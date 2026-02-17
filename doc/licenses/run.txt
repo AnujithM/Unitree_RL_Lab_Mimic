@@ -1,0 +1,24 @@
+Scenario A — Joystick on GPU Workstation (local Xbox controller)
+Terminal 1:
+
+cd ~/unitree_mujoco/simulate/build && ./unitree_mujoco
+
+Terminal 2:
+
+cd ~/unitree_rl_lab/deploy/robots/g1_29dof/build && ./g1_ctrl --network lo
+
+Scenario B — Joystick on Remote Windows PC ((Set config.yaml use joystick = 0) )
+
+Terminal 1 (GPU workstation):
+
+cd ~/unitree_mujoco/simulate/build && ./unitree_mujoco
+
+Terminal 2
+
+cd ~/unitree_rl_lab/deploy/robots/g1_29dof/build && ./g1_ctrl --network lo --remote-joystick 5000
+
+Windows
+
+python remote_joystick_client.py --host 10.127.102.24 --port 5000
+
+Path "/home/anujithm/unitree_mujoco/simulate/config.yaml"
